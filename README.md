@@ -18,7 +18,9 @@ https://github.com/cclund444/P3FindAShow
 Contributors:
 
 Tyler Mair
-
+(630) 740-9575
+tyleramair@gmail.com
+https://github.com/tmair1012
 
 Alejandro Rosas
 

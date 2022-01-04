@@ -4,10 +4,10 @@ Purpose:
 This is an app that people can gather informaion on different TV Shows. It will provide information in many aspects for each TV Show. Lets user gather information on TV Shows and what Network to view them on.
 
 Built with:
-* 
-* 
-* 
-* 
+* CSS
+* JavaScript
+* Json
+* html
 *
 * 
 

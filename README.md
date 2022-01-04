@@ -23,7 +23,9 @@ tyleramair@gmail.com
 https://github.com/tmair1012
 
 Alejandro Rosas
-
+(480) 430-4301
+Alejandromrosas@outlook.com
+https://github.com/Alejandromrosas
 
 Caleb Lund
 (575) 937-3648

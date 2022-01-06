@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    comments: [Comment]
   }
 
   type Auth {
@@ -12,15 +13,32 @@ const typeDefs = gql`
     user: User
   }
 
+  type Comment {
+    _id: ID
+    commentBody: String,
+    createdAt: String
+  }
+
+  type Reply {
+    _id: ID
+    replyBody: String
+    username: String
+    createdAt: String
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
+    comments(username: String): [Comment]
+    comment(_id: ID!): Comment
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    AddComment(commentBody: String!): Comment
+    addReply(commentId: ID!, replyBody: String!): Comment
   }
 `;
 

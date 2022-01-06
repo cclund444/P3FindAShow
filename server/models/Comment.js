@@ -28,10 +28,14 @@ const commentSchema = new Schema({
         max: 500,
         required: true,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
     username: {
         type: String,
         required: true
-    }
+    },
 })
 
 //declare the comment model

@@ -93,3 +93,23 @@ h1 {
     transition: 0.4s;
 
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-size: 24px;
+    color: white;
+    height: 50px;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    padding: 8px;
+  }

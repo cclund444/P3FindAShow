@@ -1,12 +1,14 @@
 import { useState } from "react";
 import ReactDOM from 'react-dom';
-import Header from './components/Header';
+import Homepage from './components/Homepage';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-   
-   <Header />
-   
+    <div>
+   <NavBar />
+   <Homepage />
+   </div>
   );
 }
 

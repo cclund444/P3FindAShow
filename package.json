@@ -1,0 +1,33 @@
+{
+  "name": "p3findashow",
+  "version": "1.0.0",
+  "description": "Purpose: This is an app that people can gather informaion on different TV Shows. It will provide information in many aspects for each TV Show. Lets user gather information on TV Shows and what Network to view them on.",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server-express": "^3.6.1",
+    "brcypt": "^1.0.1",
+    "concurrently": "^7.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.4",
+    "path": "^0.12.7",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && nodemon server.js\"&&\"cd tv-search && npm start\"",
+    "start": "node server.js",
+    "build": "cd tv-search && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cclund444/P3FindAShow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cclund444/P3FindAShow/issues"
+  },
+  "homepage": "https://github.com/cclund444/P3FindAShow#readme"
+}

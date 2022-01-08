@@ -2,7 +2,6 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Comment } = require('../models')
 const { signToken } = require('../utils/auth')
 
-
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
@@ -56,6 +55,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
         addComment: async (parent, args, context) => {
             if (context.user) {
                 const comment = await Comment.create({ ...args, username: context.user.username})
@@ -81,6 +81,7 @@ const resolvers = {
             }
 
             throw new AuthenticationError('you need to be logged in');
+
         }
     }
 }

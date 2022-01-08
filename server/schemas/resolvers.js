@@ -23,7 +23,15 @@ const resolvers = {
             .select('-__v -password')
             
         },
+        comments: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Comment.find(params);
+        },
+        comment: async (parent, { _id }) =>{
+        return Comment.findOne({ _id })
+        }
     },
+
     Mutation: {
         addUser: async (parent, args) => {
             const User = await User.create(args);
@@ -48,17 +56,31 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addComment: async (parent, { commentId, commentBody }, context) => {
+        addComment: async (parent, args, context) => {
             if (context.user) {
-                const updatedComment = await commentId.findOneAndUpdate(
-                { _id: commentId },
-                { $push: { comments: { commentBody, username: context.user.username}}},
-                { new: true,}
+                const comment = await Comment.create({ ...args, username: context.user.username})
+                
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { comments: comment._id } },
+                    { new: true }
+                );
+                return comment;
+        }
+            throw new AuthenticationError('you need to be logged in')
+        },
+        addReply: async (parent, { commentId, replyBody }, context) => {
+            if (context.user) {
+                const updatedComment = Comment.findOneAndUpdate(
+                    { _id: commentId },
+                    { $push: { replies: { replyBody, username: context.user.username } } },
+                    { new: true }
                 );
 
                 return updatedComment;
-        }
-            throw new AuthenticationError('youneed to be logged in')
+            }
+
+            throw new AuthenticationError('you need to be logged in');
         }
     }
 }

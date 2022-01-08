@@ -1,12 +1,12 @@
 import { useState } from "react";
 import ReactDOM from 'react-dom';
-import Homepage from './components/Homepage';
-import NavBar from './components/NavBar';
+import Homepage from './pages/Homepage';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
-   <NavBar />
+   <Navbar />
    <Homepage />
    </div>
   );

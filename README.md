@@ -8,11 +8,14 @@ Built with:
 * JavaScript
 * Json
 * html
-*
-* 
+* .gitignore
+* bootstrap
+* mongoose
 
 Website:
 
+
+Repo:
 https://github.com/cclund444/P3FindAShow
 
 Contributors:

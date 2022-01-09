@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/P3Findashow', {
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/findshow', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }

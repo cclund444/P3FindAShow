@@ -3,8 +3,6 @@ import { useState } from "react";
 
 function Homepage() {
     const [search, setSearch] = useState("");
-    const [results, setResults] = useState([]);
-    const [searchInfo, setSearchInfo] = useState({});
 
     const handleSearch = async e => {
         e.preventDefault();
@@ -26,11 +24,10 @@ function Homepage() {
     return(
         <div className="header">
         <header>
-            <h1>TV-Show Search</h1>
+            <h1>Search</h1>
             <form className="search-box" onSubmit={handleSearch}>
                 <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
             </form>
-            {(searchInfo.totalhits) ? <p>Search Results: {searchInfo.totalhits}</p> :'' }
        </header>
         <div className="results">
             <div className="result">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavTabs from './components/Navbar/index';
 import Home from './pages/Homepage';
 import Login from './pages/Login';
-// import Register from './pages/Register';
+import Register from './pages/Register';
 
 function Routes() {
   // Using useState, set the default value for currentPage to 'Home'

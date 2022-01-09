@@ -5,14 +5,14 @@
 }
 
 body {
-    background-color: rgb(237, 128, 95);
+    background-color: rgb(106, 105, 104);
 }
 
 Header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 20vh;
 }
 
 header {
@@ -57,7 +57,7 @@ h1 {
 }
 
 .results {
-    max-width: 768px;
+    max-width: 368px;
     margin: 0 auto;
 }
 
@@ -113,3 +113,16 @@ ul {
     display: block;
     padding: 8px;
   }
+
+  /* Login Form CSS */
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

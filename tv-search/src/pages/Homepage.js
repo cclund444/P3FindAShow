@@ -2,35 +2,30 @@ import { useState } from "react";
 
 
 function Homepage() {
-    const [search, setSearch] = useState("");
-    const [results, setResults] = useState([]);
-    const [searchInfo, setSearchInfo] = useState({});
+   const [users, setUsers] = useState([])
 
-    const handleSearch = async e => {
-        e.preventDefault();
-        if (search == '') return;
+   const fetchData = e => {
+       const query = e.target.value;
+       fetch(`https://api.tvmaze.com/search/shows?q=${query}`)
+   .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    setUsers(data)
+  })
+}
 
-        const endpoint =`https://api.tvmaze.com/search/shows?q=${search}`;
 
-        const response = await fetch(endpoint);
-        console.log(response);
-        if (!response.ok) {
-            throw Error(response.statusText);
-        }
-        const json = await response.json();
-        console.log(json);
-    
-    }
 
+   
 
     return(
         <div className="header">
         <header>
-            <h1>TV-Show Search</h1>
-            <form className="search-box" onSubmit={handleSearch}>
-                <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
+            <h1>Search</h1>
+            <form className="search-box">
+                <input onChange={fetchData} lebel="search" placeholder="Search Here" />
             </form>
-            {(searchInfo.totalhits) ? <p>Search Results: {searchInfo.totalhits}</p> :'' }
        </header>
         <div className="results">
             <div className="result">
@@ -42,5 +37,4 @@ function Homepage() {
     </div>
     );
 }
-
 export default Homepage;

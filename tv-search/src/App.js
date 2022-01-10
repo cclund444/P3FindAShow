@@ -1,13 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
-import Homepage from './pages/Homepage';
-import Navbar from './components/Navbar';
+
+import { AppContext } from "./lib/contextLib";
+import Routes from './Routes';
 
 function App() {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
+
   return (
     <div>
-   <Navbar />
-   <Homepage />
+      <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+  <Routes />
+</AppContext.Provider>
    </div>
   );
 }

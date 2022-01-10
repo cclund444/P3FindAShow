@@ -13,8 +13,8 @@ function Routes() {
     switch (currentPage) {
       case 'Login':
         return <Login />;
-      // case 'Register':
-      //   return <Register />;
+      case 'Register':
+        return <Register />;
       default:
         return <Home />;
     }

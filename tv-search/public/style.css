@@ -126,3 +126,15 @@ ul {
     max-width: 320px;
   }
 }
+
+/* Register Form CSS */
+@media all and (min-width: 480px) {
+    .Signup {
+      padding: 60px 0;
+    }
+  
+    .Signup form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }

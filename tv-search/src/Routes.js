@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavTabs from './components/Navbar/index';
 import Home from './pages/Homepage';
 import Login from './pages/Login';
-// import Register from './pages/Register';
+import Register from './pages/Resgister';
 
 function Routes() {
   // Using useState, set the default value for currentPage to 'Home'
@@ -13,8 +13,8 @@ function Routes() {
     switch (currentPage) {
       case 'Login':
         return <Login />;
-      // case 'Register':
-      //   return <Register />;
+      case 'Register':
+        return <Register />;
       default:
         return <Home />;
     }
@@ -22,10 +22,13 @@ function Routes() {
 
   return (
     <div>
+      
       {/* Pass the state value and the setter as props to NavTabs */}
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {/* Call the renderPage function passing in the currentPage */}
+      
       <div>{renderPage(currentPage)}</div>
+      
     </div>
   );
 }

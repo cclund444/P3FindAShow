@@ -117,7 +117,7 @@ export default function Signup() {
             value={fields.confirmPassword}
           />
         </Form.Group>
-        <LoaderButton
+        {/* <LoaderButton
           block
           size="lg"
           type="submit"
@@ -126,7 +126,7 @@ export default function Signup() {
           disabled={!validateForm()}
         >
           Signup
-        </LoaderButton>
+        </LoaderButton> */}
       </Form>
     );
   }

@@ -15,12 +15,13 @@ const resolvers = {
         users: async () => {
             return User.find()
             .select('-__v -password')
+            .populate('comments')
             
         },
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select('-__v -password')
-            
+            .populate('comments')
         },
         comments: async (parent, { username }) => {
             const params = username ? { username } : {};
@@ -33,7 +34,7 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, args) => {
-            const User = await User.create(args);
+            const user = await User.create(args);
             const token = signToken(user);
 
             return { token, user };

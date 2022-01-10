@@ -31,8 +31,8 @@ export default function Login(props) {
         variables: { ...loginState }
       });
       Auth.login(data.login.token)
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.log(err);;
     }
   }
 

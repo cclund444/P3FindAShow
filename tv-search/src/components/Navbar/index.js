@@ -6,6 +6,11 @@ function NavTabs(props) {
   const inTabs =['Home', 'Logout'];
   const outTabs = ['Login', 'Register']
 
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  }
+
   return (
     // <ul className="nav nav-tabs">
       // {inTabs.map(tab => (

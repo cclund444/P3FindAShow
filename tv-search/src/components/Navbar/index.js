@@ -2,7 +2,7 @@ import React from 'react';
 
 // Props are passed through our functional component.
 function NavTabs(props) {
-  const tabs = ['Home','Login','Register' ];
+  const tabs = ['Home','Login','Signup' ];
   return (
     <ul className="nav nav-tabs">
       {tabs.map(tab => (

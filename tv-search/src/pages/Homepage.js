@@ -32,7 +32,7 @@ function Homepage() {
         <div className="results">
             <div className="result">
             <h3>Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+            <p>Looking For A Show?</p>
             <a href="#">More</a>
             </div>
         </div> 

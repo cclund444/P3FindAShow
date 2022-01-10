@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavTabs from './components/Navbar/index';
 import Home from './pages/Homepage';
 import Login from './pages/Login';
-import Register from './pages/Signup';
+import Signup from './pages/Signup';
 
 function Routes() {
   // Using useState, set the default value for currentPage to 'Home'
@@ -13,8 +13,8 @@ function Routes() {
     switch (currentPage) {
       case 'Login':
         return <Login />;
-      case 'Register':
-        return <Register />;
+      case 'Signup':
+        return <Signup />;
       default:
         return <Home />;
     }

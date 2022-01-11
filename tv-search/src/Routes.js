@@ -24,6 +24,7 @@ function Routes() {
 
       case 'Logout':
         logout();
+        return <Login />;
         return <Home />;
 
       default:

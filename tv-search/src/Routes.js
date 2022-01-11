@@ -23,7 +23,7 @@ function Routes() {
         return <Register />;
       case 'Logout':
         logout();
-        return <Home />;
+        return <Login />;
       default:
         return <Home />;
     }

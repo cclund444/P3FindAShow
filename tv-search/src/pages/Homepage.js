@@ -38,9 +38,9 @@ function Homepage() {
        {tvdata.map((show, i) => (
            <div key={`div_results${i}`}className="results">
            <div key={`div_results2${i}`}className="result">
-            <img src={show.show.image.medium} alt=''></img>
+           {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img>:"img not available"}
            <h3> {show.show.name} </h3>
-           <p> {show.show.summary.replace(/[<>]/g,'')}</p>
+           <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
            <a href="#">More</a>
            </div>
        </div> 

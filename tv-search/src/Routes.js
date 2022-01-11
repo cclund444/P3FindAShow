@@ -21,9 +21,11 @@ function Routes() {
         return <Login />;
       case 'Register':
         return <Register />;
+
       case 'Logout':
         logout();
         return <Home />;
+
       default:
         return <Home />;
     }

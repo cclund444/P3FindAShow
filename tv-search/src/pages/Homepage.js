@@ -22,6 +22,9 @@ function Homepage() {
       
     }
 
+    function showInfo() {
+        
+}
 
     return(
         <div className="header">
@@ -35,17 +38,22 @@ function Homepage() {
                 </button>
             </form>
        </header>
+       <div className="results">
        {tvdata.map((show, i) => (
-           <div key={`div_results${i}`}className="results">
+
            <div key={`div_results2${i}`}className="result">
            {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img>:"img not available"}
            <h3> {show.show.name} </h3>
            <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
-           <a href="#">More</a>
+           <div className="more-info">
+               <p> {show.show.premiered} </p>
            </div>
-       </div> 
+           <button onClick={showInfo} type="button" className='more-btn'>More</button>
+           </div>
+ 
+       
        ))}
-        
+        </div>
     </div>
     );
 }

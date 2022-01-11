@@ -6,13 +6,13 @@ import axios from 'axios';
 
 function Homepage() {
     const [search, setSearch] = useState("");
-    const [tvdata, setTvData] = useState("")
+    const [tvdata, setTvData] = useState([]);
 
     const handleSearch = async e => {
         e.preventDefault();
 
      axios.get(`http://api.tvmaze.com/search/shows?q=${search}`).then(function (response) {
-         console.log(response.data);
+         console.log(response);
          setTvData(response.data);
      })
      .catch(function (err)
@@ -35,13 +35,17 @@ function Homepage() {
                 </button>
             </form>
        </header>
-        <div className="results">
-            <div className="result">
-            <h3> {} </h3>
-            <p> {}</p>
-            <a href="#">More</a>
-            </div>
-        </div> 
+       {tvdata.map((show, i) => (
+           <div key={`div_results${i}`}className="results">
+           <div key={`div_results2${i}`}className="result">
+            <img src={show.show.image.medium} alt=''></img>
+           <h3> {show.show.name} </h3>
+           <p> {show.show.summary.replace(/[<>]/g,'')}</p>
+           <a href="#">More</a>
+           </div>
+       </div> 
+       ))}
+        
     </div>
     );
 }

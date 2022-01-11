@@ -29,6 +29,19 @@ const userSchema = new Schema(
     }
 );
 
+userSchema.pre('save', async function(next) {
+    if (this.isNew || this.isModified('password')) {
+        const rounds = 10;
+        this.password = await bcrypt.hash(this.password, rounds);
+    }
+
+    next();
+});
+
+userSchema.methods.isCorrectPassword = async function(password) {
+    return bcrypt.compare(password, this.password)
+}
+
 const User = model('User', userSchema);
 
 module.exports = User;

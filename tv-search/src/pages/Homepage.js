@@ -51,9 +51,13 @@ function Homepage() {
 
     }
 
+    function showInfo() {
+        
+}
 
     return (
         <div className="header">
+<<<<<<< HEAD
             <header>
                 <h1>Search</h1>
                 <form className="search-box" onSubmit={handleSearch}>
@@ -110,6 +114,35 @@ function Homepage() {
             </div>
 
         </div>
+=======
+        <header>
+            <h1>Search</h1>
+            <form className="search-box" onSubmit={handleSearch}>
+                <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
+                <button className='searchBtn' onClick=
+                {handleSearch}>
+                    Search!
+                </button>
+            </form>
+       </header>
+       <div className="results">
+       {tvdata.map((show, i) => (
+
+           <div key={`div_results2${i}`}className="result">
+           {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img>:"img not available"}
+           <h3> {show.show.name} </h3>
+           <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
+           <div className="more-info">
+               <p> {show.show.premiered} </p>
+           </div>
+           <button onClick={showInfo} type="button" className='more-btn'>More</button>
+           </div>
+ 
+       
+       ))}
+        </div>
+    </div>
+>>>>>>> 48291407d761940650e1a6839a79852842a44b69
     );
 }
 

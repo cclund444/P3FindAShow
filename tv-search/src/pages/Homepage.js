@@ -70,10 +70,10 @@ function Homepage() {
                         {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img> : "img not available"}
                         <h3> {show.show.name} </h3>
                         <p> {show.show.summary?.replace(/[<>]/g, '')}</p>
-                        <a href="#">More</a>
+                        <a href="#">Search Again</a>
                         {/* <!-- Button trigger modal --> */}
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Comment
+                            View/Leave Comment
                         </button>
                     </div>
                 </div>

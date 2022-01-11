@@ -1,6 +1,17 @@
-// import React from 'react'
-// import { userParams } from 'react-router-dom'
+import axios from 'axios';
+import React, { useState } from 'react'
 
-// import Auth from '../utils/auth'
+function Show() {
 
-// const 
+
+await axios.get(`http://api.tvmaze.com/shows/${id}`)
+
+
+    return(
+        <div>
+            Single Page
+        </div>
+    )
+}
+
+export default Show;

@@ -40,8 +40,8 @@ function Homepage() {
            <div key={`div_results2${i}`}className="result">
             <img src={show.show.image.medium} alt=''></img>
            <h3> {show.show.name} </h3>
-           <p> {show.show.summary.replace(/[<>]/g,'')}</p>
-           <a href="#">More</a>
+           <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
+           <a href={`#Show${show.show.id}`}>More</a>
            </div>
        </div> 
        ))}

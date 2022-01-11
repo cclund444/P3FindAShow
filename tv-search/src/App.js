@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
-import Homepage from './pages/Homepage';
-import Navbar from './components/Navbar';
+import { AppContext } from "./lib/contextLib";
 import Routes from './Routes';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {
@@ -33,14 +32,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
   return (
    <ApolloProvider client={client}>
     <div>
-      <Routes />
+      <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+  <Routes />
+</AppContext.Provider>
    </div>
    </ApolloProvider>
   );
 }
-
 export default App;

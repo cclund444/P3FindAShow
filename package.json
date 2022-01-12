@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
@@ -13,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0",
     "apollo-server-express": "^3.6.1",
     "aws-amplify": "^4.3.12",
     "bcrypt": "^5.0.1",

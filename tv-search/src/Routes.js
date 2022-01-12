@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Auth from './utils/auth';
 import Frontpage from './pages/Frontpage'
+import Payment from './components/Payment/index'
 
 function Routes() {
   // Using useState, set the default value for currentPage to 'Home'
@@ -25,6 +26,8 @@ function Routes() {
       case 'Logout':
         logout();
         return <Login />;
+      // case 'Donate':
+      //   return <Payment />;
       default:
         return <Home />;
     }

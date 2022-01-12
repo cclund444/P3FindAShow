@@ -26,12 +26,17 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     comments(username: String): [Comment]
     comment(_id: ID!): Comment
+    checkout(donations: [ID]!): Checkout
   }
 
   type Mutation {

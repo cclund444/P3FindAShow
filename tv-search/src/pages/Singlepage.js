@@ -1,6 +1,11 @@
-// import React from 'react'
-// import { userParams } from 'react-router-dom'
+import React from 'react';
 
-// import Auth from '../utils/auth'
+function Singlepage() {
+    return(
+        <div>
+            <h1>Singlepage</h1>
+        </div>
+    );
+}
 
-// const 
+export default Singlepage;

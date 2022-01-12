@@ -9,7 +9,7 @@
     "develop": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
     "start": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
     "watch": "nodemon server.js",
-    "build": "cd client && npm run build"
+    "build": "cd tv-search && npm run build"
   },
   "author": "",
   "license": "ISC",

@@ -56,6 +56,7 @@ function Homepage() {
 
     return (
         <div className="header">
+<<<<<<< HEAD
             <header>
                 <h1>Search</h1>
                 <form className="search-box" onSubmit={handleSearch}>
@@ -111,6 +112,35 @@ function Homepage() {
                     </div>
                 </div>
             </div>
+=======
+        <header>
+            <h1>Search</h1>
+            <form className="search-box" onSubmit={handleSearch}>
+                <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
+                <button className='searchBtn' onClick=
+                {handleSearch}>
+                    Search!
+                </button>
+            </form>
+       </header>
+       <div className="results">
+       {tvdata.map((show, i) => (
+
+           <div key={`div_results2${i}`}className="result">
+               <h3> {show.show.name} </h3>
+           {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img>:"img not available"}
+          <p style={{fontWeight: "bold"}}>Premiere: {show.show.premiered} </p> 
+          <p style={{fontWeight: "bold", textIndent:"1rem"}}>Summary</p> <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
+          <p>Ratings: {show.show.rating?.average}</p>
+           <div className="more-info">
+               
+           </div>
+           <button onClick={showInfo} type="button" className='more-btn'>More</button>
+           </div>
+ 
+       
+       ))}
+>>>>>>> 1628ee3078164d7e35d208aadd90657132d93c08
         </div>
     );
 }

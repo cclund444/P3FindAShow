@@ -1,180 +1,33 @@
-import { useState, useContext } from "react";
+mport { useState, useContext } from "react";
 import useTVContext from '../utils/GlobalState'
 import axios from 'axios';
-import { Button, Modal } from "react-bootstrap";
-<<<<<<< HEAD
-import CommentBox from "../components/CommentForm/CommentBox"
-=======
-import CommentBox from "../components/CommentBox"
 
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
 
 
 function Homepage() {
     const [search, setSearch] = useState("");
     const [tvdata, setTvData] = useState([]);
-    const [modalShow, setModalShow] = useState(false)
-    const [comments, setComments] = useState([])
-
-    const handleModalShow = () => {
-        setModalShow(!modalShow)
-    }
 
     const handleSearch = async e => {
         e.preventDefault();
 
-        axios.get(`http://api.tvmaze.com/search/shows?q=${search}`).then(function (response) {
-            console.log(response);
-            setTvData(response.data);
-        })
-            .catch(function (err) {
-                console.log(err);
-            })
-
-    }
-
-<<<<<<< HEAD
-    const getComments = () => {
-=======
-    const getComments =()=>{
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-        //tretireve all comments
-
-        //axios.get('/api/comment').then....
-        // store in setComment state
-
-    }
-
-<<<<<<< HEAD
-    const handleNewCommentSubmit = (e) => {
-        e.preventDefault()
-        const comment = document.getElementById("newComment").textContent
-
-        const newCommentdata = {
-=======
-    const handleNewCommentSubmit = (e)=>{
-        e.preventDefault()
-        const comment=document.getElementById("newComment").textContent
-
-        const newCommentdata ={
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-            //comment user id
-
-        }
-
-        //post api
-
-
+     axios.get(`http://api.tvmaze.com/search/shows?q=${search}`).then(function (response) {
+         console.log(response);
+         setTvData(response.data);
+     })
+     .catch(function (err)
+     {
+         console.log(err);
+     })
+      
     }
 
     function showInfo() {
+        
+}
 
-<<<<<<< HEAD
-    }
-
-=======
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-    return (
+    return(
         <div className="header">
-<<<<<<< HEAD
-            <header>
-                <h1>Search</h1>
-                <form className="search-box" onSubmit={handleSearch}>
-                    <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
-                    <button className='searchBtn' onClick=
-                        {handleSearch}>
-                        Search!
-                    </button>
-                </form>
-            </header>
-<<<<<<< HEAD
-            <div className="results">
-                {tvdata.map((show, i) => (
-=======
-            {tvdata.map((show, i) => (
-                <div key={`div_results${i}`} className="results">
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-                    <div key={`div_results2${i}`} className="result">
-                        {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img> : "img not available"}
-                        <h3> {show.show.name} </h3>
-                        <p> {show.show.summary?.replace(/[<>]/g, '')}</p>
-<<<<<<< HEAD
-                        <div className="more-info">
-                            <p> {show.show.premiered} </p>
-                            {/* <p> {show.show.summary?.replace(/[<>]/g, '')}</p> */}
-=======
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-                        <a href="#">Search Again</a>
-                        {/* <!-- Button trigger modal --> */}
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            View/Leave Comment
-                        </button>
-                    </div>
-                </div>
-            ))}
-<<<<<<< HEAD
-                {/* <!-- Modal --> */}
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                {comments.length < 1 || comments === null ? "No Comments" : comments.map(comment => (<p>{comment.commentBody}</p>))}
-
-                                <div>
-
-                                    <textarea id="newCommment">
-
-                                    </textarea>
-                                    <button type="button" class="btn btn-info" onClick={handleNewCommentSubmit}>submit comment</button>
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
-=======
-
-
-
-            {/* <!-- Modal --> */}
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            {comments.length<1 || comments===null? "No Comments":comments.map(comment=> (<p>{comment.commentBody}</p>)) }
-
-                            <div>
-
-                            <textarea id="newCommment">
-
-                            </textarea>
-                            <button type="button" class="btn btn-info" onClick={handleNewCommentSubmit}>submit comment</button>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-                        </div>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-=======
-
-        </div>
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
-=======
         <header>
             <h1>Search</h1>
             <form className="search-box" onSubmit={handleSearch}>
@@ -202,14 +55,9 @@ function Homepage() {
  
        
        ))}
->>>>>>> 1628ee3078164d7e35d208aadd90657132d93c08
         </div>
-<<<<<<< HEAD
-=======
     </div>
->>>>>>> 48291407d761940650e1a6839a79852842a44b69
->>>>>>> 94fdf67aa797ac225c4ec3d0b3881a09ceb575fb
     );
 }
 
-            export default Homepage;
+export default Homepage;

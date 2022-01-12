@@ -1,34 +1,41 @@
 {
-  "name": "server",
+  "name": "p3findashow",
   "version": "1.0.0",
-  "description": "",
+  "description": "Purpose: This is an app that people can gather informaion on different TV Shows. It will provide information in many aspects for each TV Show. Lets user gather information, leave or review comments from others.",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
-    "start": "node server.js",
-    "watch": "nodemon server.js",
-    "build": "cd tv-search && npm run build"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^3.6.1",
-    "aws-amplify": "^4.3.12",
+    "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.1.3",
     "concurrently": "^7.0.0",
     "express": "^4.17.2",
     "graphql": "^16.2.0",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "mongodb": "^4.3.0",
-    "mongoose": "^6.1.5",
+    "mongoose": "^6.1.6",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
-    "react-bootstrap": "^2.1.0",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^6.2.1",
+    "react": "^17.0.2",
     "react-scripts": "^5.0.0",
-    "stripe": "^8.195.0"
-  }
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "develop": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
+    "build": "cd tv-search && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cclund444/P3FindAShow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cclund444/P3FindAShow/issues"
+  },
+  "homepage": "https://github.com/cclund444/P3FindAShow#readme"
 }

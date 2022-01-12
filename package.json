@@ -29,7 +29,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "develop": "concurrently \"npm run watch\" \"cd tv-search && npm start\"",
-    "build": "cd tv-search && npm run-script build"
+    "build": "cd tv-search && npm run-script build",
+    "watch": "nodemon"
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // Props are passed through our functional component.
 function NavTabs(props) {
   const inTabs =['Home', 'Logout'];
-  const outTabs = ['Login', 'Register']
+  const outTabs = ['Login', 'Register','Home']
 
 
   return (

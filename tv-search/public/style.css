@@ -24,6 +24,7 @@ header {
 .nav {
     background-color: rgb(51, 50, 50);
     justify-content: space-between;
+    height: 50px;
 }
 
 .nav-heading {

@@ -4,10 +4,11 @@ import Home from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Auth from './utils/auth';
+import Frontpage from './pages/Frontpage'
 
 function Routes() {
   // Using useState, set the default value for currentPage to 'Home'
-  const [currentPage, handlePageChange] = useState('Home');
+  const [currentPage, handlePageChange] = useState('Login');
 
 
   const logout = event => {

@@ -1,4 +1,4 @@
-mport { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import useTVContext from '../utils/GlobalState'
 import axios from 'axios';
 
@@ -20,16 +20,17 @@ function Homepage() {
          console.log(err);
      })
       
+     e.preventDefault();
     }
 
+
     function showInfo() {
-        
 }
 
     return(
         <div className="header">
         <header>
-            <h1>Search</h1>
+            <h1>Search For A TV Show!</h1>
             <form className="search-box" onSubmit={handleSearch}>
                 <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
                 <button className='searchBtn' onClick=

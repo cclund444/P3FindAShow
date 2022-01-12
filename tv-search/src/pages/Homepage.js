@@ -20,13 +20,17 @@ function Homepage() {
          console.log(err);
      })
       
+     e.preventDefault();
     }
 
+
+    function showInfo() {
+}
 
     return(
         <div className="header">
         <header>
-            <h1>Search</h1>
+            <h1>Search For A TV Show!</h1>
             <form className="search-box" onSubmit={handleSearch}>
                 <input type="search" placeholder="Search Here" value={search} onChange={e => setSearch(e.target.value)} />
                 <button className='searchBtn' onClick=
@@ -35,17 +39,22 @@ function Homepage() {
                 </button>
             </form>
        </header>
+       <div className="results">
        {tvdata.map((show, i) => (
-           <div key={`div_results${i}`}className="results">
+
            <div key={`div_results2${i}`}className="result">
-            <img src={show.show.image.medium} alt=''></img>
+           {show.show.image?.medium !== null ? <img src={show.show.image?.medium} alt=''></img>:"img not available"}
            <h3> {show.show.name} </h3>
            <p> {show.show.summary?.replace(/[<>]/g,'')}</p>
-           <a href={`#Show${show.show.id}`}>More</a>
+           <div className="more-info">
+               <p> {show.show.premiered} </p>
            </div>
-       </div> 
+           <button onClick={showInfo} type="button" className='more-btn'>More</button>
+           </div>
+ 
+       
        ))}
-        
+        </div>
     </div>
     );
 }

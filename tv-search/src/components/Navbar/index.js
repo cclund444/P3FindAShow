@@ -9,23 +9,9 @@ function NavTabs(props) {
 
 
   return (
-    // <ul className="nav nav-tabs">
-      // {inTabs.map(tab => (
-      //   <li className="nav-item" key={tab}>
-      //     <a
-      //       href={'#' + tab.toLowerCase()}
-      //       onClick={() => props.handlePageChange(tab)}
-      //       className={
-      //         props.currentPage === tab ? 'nav-link active' : 'nav-link'
-      //       }
-      //     >
-      //       {tab}
-      //     </a>
-      //   </li>
-      // ))}
-    // </ul>
-
-    <ul className='nav nav-tabs'>
+    <div className="nav">
+      <h1 className='nav-heading'>P3Find a Show</h1>
+    <ul className='nav-tabs'>
     {Auth.loggedIn() ? (
       inTabs.map(tab => (
         <li className="nav-item" key={tab}>
@@ -56,7 +42,7 @@ function NavTabs(props) {
       ))
     )}
     </ul>
-    
+    </div>
   );
 }
 

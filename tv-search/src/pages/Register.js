@@ -57,7 +57,7 @@ export default function Form() {
     );
   };
   return (
-    <div className="form">
+    <div className="signUp">
       <div>
         <h1>Register</h1>
       </div>
@@ -66,7 +66,7 @@ export default function Form() {
         {errorMessage()}
         {successMessage()}
       </div>
-      <form>
+      <form className="registerForm">
         {/* Labels and inputs for form data */}
         <label className="label">Name</label>
         <input onChange={handleName} className="input"
@@ -77,7 +77,7 @@ export default function Form() {
         <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
           value={password} type="password" />
-        <button onClick={handleSubmit} className="btn" type="submit">
+        <button onClick={handleSubmit} className="Signupbtn" type="submit">
           Submit
         </button>
       </form>

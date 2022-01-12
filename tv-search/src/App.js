@@ -11,6 +11,7 @@ import {
 } from '@apollo/client'
 import { TVProvider } from './utils/GlobalState';
 import { setContext } from '@apollo/client/link/context'
+// import Footer from './components/Footer';
 
 
 const httpLink = createHttpLink({
@@ -40,6 +41,7 @@ function App() {
     <div>
       <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
   <Routes />
+  {/* <Footer /> */}
 </AppContext.Provider>
    </div>
    </ApolloProvider>

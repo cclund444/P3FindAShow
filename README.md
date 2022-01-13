@@ -3,6 +3,15 @@
 Purpose:
 This is an app that people can gather informaion on different TV Shows. It will provide information in many aspects for each TV Show. Lets user gather information, leave or review comments from others.
 
+Process:
+* Signup/Login
+* Search for desired TV show information
+* Read descriptions and view images of search results
+* Leave / Review comments/perspectives left from others
+
+Tasks:
+* Back end log-in and registering, back end comments, heroku, mongo, setting up pages, react displays, API functions and displays
+
 Built with:
 * CSS
 * JavaScript
@@ -34,4 +43,6 @@ Caleb Lund
 (575) 937-3648
 calebcoylund444@gmail.com
 https://github.com/cclund444
+
+<img src= "" />
 

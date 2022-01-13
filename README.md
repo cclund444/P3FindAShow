@@ -27,6 +27,9 @@ https://github.com/cclund444/P3FindAShow
 Heroku:
 https://powerful-shore-59524.herokuapp.com/#login
 
+Powerpoint:
+https://docs.google.com/presentation/d/1mBxvn6_yWMB91r_sZRkkRUX48Et7JJXTSipSQlCRGj0/edit?usp=sharing
+
 Contributors:
 
 Tyler Mair
@@ -44,5 +47,7 @@ Caleb Lund
 calebcoylund444@gmail.com
 https://github.com/cclund444
 
-<img src= "" />
-
+<img src= "css/assets/1.jpg" />
+<img src= "css/assets/2jpg" />
+<img src= "css/assets/3.jpg" />
+<img src= "css/assets/4jpg" />
